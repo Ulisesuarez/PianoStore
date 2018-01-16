@@ -1,8 +1,7 @@
-.productos{margin-left: 15%;
-		float: left;}
+.productos{margin-left: 7%;}
 .producto{float:left;
 		position: relative;
-		margin-left: 11%;
+		margin-left: 10%;
 		margin-top: 5%;}		
 .producto p{position: absolute;
 	margin-left: 23%;
