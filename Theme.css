@@ -2,6 +2,15 @@
     display:inline;
     z-index: 2;
     
+.productos{margin-left: 7%;}
+.producto{float:left;
+		position: relative;
+		margin-left: 10%;
+		margin-top: 5%;}		
+.producto p{position: absolute;
+	margin-left: 23%;
+	color: black;}
+.producto p:hover{color: blue;}	
 
 }
 .ulMain{
@@ -130,4 +139,43 @@ iframe{
     height:45em; 
     margin-top:-14em; 
     width: 100%;
+}
+
+footer{margin-top: 60%;
+	position: absolute;
+	margin-left: 55%}
+.sprites li {margin-left:60%;
+		
+    list-style: none;
+    position: absolute;
+	bottom: 11px;
+}
+.sprites li, .sprites a {
+    height: 84px;
+	display: block;	
+}
+.facebook {	
+    left: 84px;
+	width: 84px;
+    background: url("https://lh6.googleusercontent.com/-ImfwnK13pGw/Ui7ndohdbeI/AAAAAAAAB94/mkMwWrLrrP0/s924/mini-social-icons.png") 0 -84px;
+}
+.googleplus {	
+	left: 168px;
+	width: 84px;
+    background: url("https://lh6.googleusercontent.com/-ImfwnK13pGw/Ui7ndohdbeI/AAAAAAAAB94/mkMwWrLrrP0/s924/mini-social-icons.png") -252px -84px;
+}
+.in {	
+	left: 252px;
+	width: 84px;
+    background: url("https://lh6.googleusercontent.com/-ImfwnK13pGw/Ui7ndohdbeI/AAAAAAAAB94/mkMwWrLrrP0/s924/mini-social-icons.png") -334px -84px;
+}
+.twitter {	
+	left: 334px;
+	width: 84px;
+    background: url("https://lh6.googleusercontent.com/-ImfwnK13pGw/Ui7ndohdbeI/AAAAAAAAB94/mkMwWrLrrP0/s924/mini-social-icons.png") 252px -84px;
+}
+.youtube {	
+    left: 418px;
+	width: 84px;
+    background: url("https://lh6.googleusercontent.com/-ImfwnK13pGw/Ui7ndohdbeI/AAAAAAAAB94/mkMwWrLrrP0/s924/mini-social-icons.png") 84px -84px;
 }
