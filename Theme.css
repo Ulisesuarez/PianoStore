@@ -1,7 +1,7 @@
 .MainMenu{
     display:inline;
     z-index: 2;
-    
+}
 .productos{margin-left: 7%;}
 .producto{float:left;
 		position: relative;
@@ -12,7 +12,7 @@
 	color: black;}
 .producto p:hover{color: blue;}	
 
-}
+
 .ulMain{
         display: inline-flex;
         list-style-type: none;
