@@ -1,7 +1,4 @@
-.MainMenu{
-    display:inline;
-    z-index: 2;
-}
+
 .productos{margin-left: 7%;}
 .producto{float:left;
 		position: relative;
@@ -12,7 +9,11 @@
 	color: black;}
 .producto p:hover{color: blue;}	
 
-
+/*Menu */
+.MainMenu{
+    display:inline;
+    z-index: 2;
+}
 .ulMain{
         display: inline-flex;
         list-style-type: none;
@@ -96,6 +97,28 @@ width: auto;
         
     }
 
+.ulAc{
+    display: none;
+}
+.ulAc li{
+
+        display:none;
+            
+        background-color: #333;
+        border:solid black 0.1em;
+        width: auto;
+    
+    }    
+#accesorios:hover .ulAc li{
+    display:none;
+    font-size: 0.7em;
+    text-decoration: none;
+    color:white;
+    align-self: center;
+    width: auto;
+
+}
+
 
 .ulProduct{
     margin-left: -25%;
@@ -111,10 +134,7 @@ width: auto;
 }
 
 
-/*<div style="   ">
-<scrolling="no" src="http://tools.dimpost.com/proxy-server.html" style=">
-</iframe>
-</div>*/
+/*Frame del Newsletter en Main*/
 .frame{
     z-index: -1;
     border: 2px;
@@ -122,8 +142,10 @@ width: auto;
     border-color:#D5CC5A;
     overflow: hidden;
     margin: 2em auto;
+    width: 70%;
     max-width: 70%;
-    
+    display: block;
+    margin-top: 70%;
     position:relative;
     left: 2%;
     right: 10%;
@@ -139,6 +161,9 @@ iframe{
     height:45em; 
     margin-top:-14em; 
     width: 100%;
+}
+section {
+    display: block;
 }
 
 footer{margin-top: 60%;
