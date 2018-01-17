@@ -21,6 +21,7 @@ body{background: linear-gradient(135deg, rgb(250, 152, 229), rgb(16, 223, 223), 
     z-index: -1;
 }
 .productos:hover .producto{z-index: 0;}		
+
 .producto p{position: absolute;
 	margin-left: 23%;
 	color: black;
@@ -77,6 +78,161 @@ body{background: linear-gradient(135deg, rgb(250, 152, 229), rgb(16, 223, 223), 
     background-color: black;
 }
 
+/*Menu */
+.MainMenu{
+    display:inline;
+    z-index: 2;
+}
+.ulMain{
+        display: inline-flex;
+        list-style-type: none;
+        margin: auto;
+        padding: 0.5em;
+        width: 100%;
+        font-size: 2em;
+        
+}
+
+.ulMain li {
+    
+    padding: 1% ;
+    background: #333;
+    color: #eee;
+    border-bottom: 0.01em solid #000;
+    border-top: 0.01em solid #666;
+    text-decoration: none;
+    width: auto;
+    height: 2em;
+
+}
+
+.ulMain li a{
+    float:left;
+    background: #333;
+    color: #eee;
+    text-decoration: none;
+    
+
+}
+
+
+.ulMain .norm:hover{
+    background-color: black;
+}
+
+.ulMain .norm:hover a{
+    background-color: black;
+}
+
+
+
+
+#menunoa{
+text-decoration: none;
+color:#eee;
+width: auto;
+}
+
+#menunoa:hover{
+    
+    background-color: #000;
+    }
+
+#menunoa:hover .ulProduct li{
+display:block;
+font-size: 0.7em;
+text-decoration: none;
+color:white;
+align-self: center;
+width: auto;
+}
+.ulProduct li{
+        display:none;
+        
+        background-color: #333;
+        border:solid black 0.1em;
+        width: auto;
+    }
+.ulProduct li:hover{
+        
+        
+        background-color:black;
+        
+    }
+.ulProduct li:hover a{
+        
+        
+        background-color:black;
+        
+    }
+
+.ulAc{
+    display: none;
+}
+.ulAc li{
+
+        display:none;
+            
+        background-color: #333;
+        border:solid black 0.1em;
+        width: auto;
+    
+    }    
+#accesorios:hover .ulAc li{
+    display:none;
+    font-size: 0.7em;
+    text-decoration: none;
+    color:white;
+    align-self: center;
+    width: auto;
+
+}
+
+
+.ulProduct{
+    margin-left: -25%;
+    margin-top:15%;
+}
+
+
+#space{
+    width: 12%;
+}
+#primerli{
+    background-color: #000;
+}
+
+
+/*Frame del Newsletter en Main*/
+.frame{
+    z-index: -1;
+    border: 2px;
+    border-style: solid;
+    border-color:#D5CC5A;
+    overflow: hidden;
+    margin: 2em auto;
+    width: 70%;
+    max-width: 70%;
+    display: block;
+    margin-top: 70%;
+    position:relative;
+    left: 2%;
+    right: 10%;
+    top:70%;
+    margin-top: 10%;
+
+}
+
+iframe{
+    z-index: -1;
+    border: 0px none;  
+    height:45em; 
+    margin-top:-14em; 
+    width: 100%;
+}
+section {
+    display: block;
+}
 
 
 
