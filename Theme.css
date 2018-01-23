@@ -4,10 +4,7 @@ body{background: linear-gradient(135deg, rgb(250, 152, 229), rgb(16, 223, 223), 
     margin-left: 7%; 
 }
 
-.MainMenu{
-    display:inline;
-    z-index: 2;
-}
+
 @font-face{
     font-family: "Gill Sans";
     src: url(gillsans.ttf) format("truetype");
@@ -21,6 +18,7 @@ body{background: linear-gradient(135deg, rgb(250, 152, 229), rgb(16, 223, 223), 
     z-index: -1;
 }
 .productos:hover .producto{z-index: 0;}		
+
 .producto p{position: absolute;
 	margin-left: 23%;
 	color: black;
@@ -61,6 +59,13 @@ body{background: linear-gradient(135deg, rgb(250, 152, 229), rgb(16, 223, 223), 
     display: inline;
 
 }
+
+/*Menu */
+.MainMenu{
+    display:inline;
+    z-index: 2;
+}
+
 .ulMain{
         display: inline-flex;
         list-style-type: none;
@@ -70,6 +75,7 @@ body{background: linear-gradient(135deg, rgb(250, 152, 229), rgb(16, 223, 223), 
         font-size: 2em;
         
 }
+
 
 .ulMain li {
     
@@ -89,28 +95,28 @@ body{background: linear-gradient(135deg, rgb(250, 152, 229), rgb(16, 223, 223), 
     background: #333;
     color: #eee;
     text-decoration: none;
-    
-
 }
 
+.norm{
+    z-index: 0;
+}
 
 .ulMain .norm:hover{
     background-color: black;
 }
 
-.ulMain .norm:hover a{
+.ulMain .norm:hover > a{
     background-color: black;
 }
 
 
-
-
 #menunoa{
-text-decoration: none;
-color:#eee;
-width: auto;
-}
+    text-decoration: none;
+    color:#eee;
+    width: 7.813rem;
+    }
 
+    
 #menunoa:hover{
     
     background-color: #000;
@@ -122,8 +128,10 @@ font-size: 0.7em;
 text-decoration: none;
 color:white;
 align-self: center;
-width: auto;
+width: 6.4em;
+margin-left:-19%
 }
+
 .ulProduct li{
         display:none;
         
@@ -131,33 +139,258 @@ width: auto;
         border:solid black 0.1em;
         width: auto;
     }
+
+
 .ulProduct li:hover{
         
         
         background-color:black;
         
     }
-.ulProduct li:hover a{
+.ulProduct li:hover > a{
         
         
         background-color:black;
         
     }
 
-
 .ulProduct{
     margin-left: -25%;
     margin-top:15%;
 }
 
+/*#accesorios:hover{
+    color:green;
+}*/
+
+.ulAc{
+    display: none;
+}
+
+.ulAc li{
+
+        display:none;
+            
+        background-color: #333;
+        border:solid black 0.1em;
+        width: auto;
+        padding: 0.3em;
+    
+} 
+
+.ulAc li a{
+    width: 10em;}
+    
+#accesorios:hover .ulAc{
+    display: inline-block;
+    margin-left:97%;
+    margin-right:-100%;
+    margin-top:-165%;
+    z-index: 0;
+}   
+#accesorios:hover .ulAc li{
+    display:block;
+    font-size: 0.7em;
+    text-decoration: none;
+    color:white;
+    align-self: center;
+    width: auto;
+
+}
+.ulElec{
+    display: none;
+}
+.ulElec li{
+
+    display:none;
+    
+    background-color: #333;
+    border:solid black 0.1em;
+    width: auto;
+    padding-top: 0.8em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+
+}
+
+.ulElec li a{
+    width: 12em;
+}
+
+#teclados:hover .ulElec{
+    display: inline-block;
+    margin-left:101%;
+    margin-right:-100%;
+    margin-top:-129%;
+    z-index: 0;
+}   
+#teclados:hover .ulElec li{
+    display:block;
+    font-size: 0.7em;
+    text-decoration: none;
+    color:white;
+    align-self: center;
+    width: auto;
+
+}
+.ulElec{
+    display: none;
+}
+.ulElec li{
+
+    display:none;
+    
+    background-color: #333;
+    border:solid black 0.1em;
+    width: auto;
+    padding-top: 0.8em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+
+}
+
+
+
+#organos:hover .ulOrg{
+    display: inline-block;
+    margin-left:105.5%;
+    margin-right:-100%;
+    margin-top:-93%;
+    z-index: 0;
+}   
+#organos:hover .ulOrg li{
+    display:block;
+    font-size: 0.7em;
+    text-decoration: none;
+    color:white;
+    align-self: center;
+    width: auto;
+
+}
+
+.ulOrg{
+    display: none;
+}
+.ulOrg li{
+
+    display:none;    
+    background-color: #333;
+    border:solid black 0.1em;
+    width: auto;
+    padding-top: 0.9em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+
+}
+.ulOrg li a{
+    width: 14em;
+}
+
+
+
+#acordeones:hover .ulAcor{
+    display: inline-block;
+    margin-left:97%;
+    margin-right:-100%;
+    margin-top:-57%;
+    z-index: 0;
+}   
+#acordeones:hover .ulAcor li{
+    display:block;
+    font-size: 0.7em;
+    text-decoration: none;
+    color:white;
+    align-self: center;
+    width: auto;
+
+}
+
+.ulAcor{
+    display: none;
+}
+.ulAcor li{
+
+    display:none;    
+    background-color: #333;
+    border:solid black 0.1em;
+    width: auto;
+    padding-top: 0.9em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+
+}
+.ulAcor li a{
+    width: 10em;
+}
+
+#pianos{
+    margin-top:1.8em;
+}
+#pianos:hover .ulPianos{
+    display: inline-block;
+    margin-left:93%;
+    margin-right:-100%;
+    margin-top:-21%;
+    z-index: 0;
+}   
+#pianos:hover .ulPianos li{
+    display:block;
+    font-size: 0.7em;
+    text-decoration: none;
+    color:white;
+    align-self: center;
+    width: auto;
+    z-index: 2;
+}
+
+.ulPianos{
+    display: none;
+}
+.ulPianos li{
+
+    display:none;    
+    background-color: #333;
+    border:solid black 0.1em;
+    width: auto;
+    padding-top: 0.9em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    z-index: 2;
+
+}
+.ulPianos li a{
+    width: 8em;
+}
+
+
 
 #space{
-    width: 12%;
+    width: 26%;
 }
 #primerli{
     background-color: #000;
 }
 
+
+/*Frame del Newsletter en Main*/
+.frame{
+    z-index: -1;
+    border: 2px;
+    border-style: solid;
+    border-color:#D5CC5A;
+    overflow: hidden;
+    margin: 2em auto;
+    width: 70%;
+    max-width: 70%;
+    display: block;
+    margin-top: 70%;
+    position:relative;
+    left: 2%;
+    right: 10%;
+    top:70%;
+    margin-top: 10%;
+
+}
 
 /*<div style="   ">
 <scrolling="no" src="http://tools.dimpost.com/proxy-server.html" style=">
@@ -184,8 +417,54 @@ iframe{
     border: 0px none; 
  
     height:45em; 
-    margin-top:-7em; 
+    margin-top:-14em; 
     width: 100%;
+}
+
+.cabeceraArticuloNewsletter{
+    background-color: rgb(39, 72, 80);
+    border-radius:1em;
+    color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+    text-align: left;
+    padding-left: 2em;
+    margin-top:1em;
+}
+
+.SeccionNewsleter{
+    background-color:rgb(188, 242, 255);
+    border-radius:1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height:auto;
+    padding-bottom:2em;
+
+
+}
+
+#Caro{
+  height:38em;  
+}
+#bloqueCaro{
+    float:left;
+    margin-left:2em;
+    margin-right:1em;
+    margin-bottom:1em;
+}
+
+.NewsTexto{
+    margin-left:2em;
+    margin-right:1em;
+}
+.caroHistoria{
+    margin-right:1em;
+}
+.cursiva{
+    font-style:italic;
+}
+
+section {
+    display: block;
+    
 }
 
 
