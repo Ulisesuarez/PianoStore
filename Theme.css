@@ -467,7 +467,39 @@ section {
     
 }
 
+.botonCesta{
+    margin-left:0%;
+    float:right;
+    display:none;
 
+}
+.articulo:hover .botonCesta{
+display:inline;
+margin-top:13%;
+margin-left:20%;
+}
+
+#tablehead th{
+    margin-left: 5em;
+    padding-left: 5em;
+}
+#hiddenIndex{
+    display:inline;
+}
+
+#botElim{
+    width: 2em;
+    height: 2em;
+    opacity: 0.7;
+}
+#imgElim{
+    border-style: solid;
+    width: 1em;
+    height: 1em;
+    border-color:black;
+    border-width: 0.1em;
+    
+}
 footer{position: fixed;
 }
 

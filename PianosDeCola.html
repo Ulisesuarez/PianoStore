@@ -14,6 +14,7 @@
 </head>
 
 <body>	
+    <p id="hiddenIndex">0</p>
         <header>
                 
                 <nav class="MainMenu">
@@ -79,16 +80,17 @@
                      <li class="norm"> <a  href="Minijuego.html">Play</a> </li>
                      <li class="norm"><a  href="Contact.html">Contacto</a> </li>
                      <li id="space">      </li>
-                     <li class="norm"> <a  href="Compra.html"><img id="carritoimagen" src="carritoblancok.png" title="Compra!" ></a> </li>
+                     <li class="norm"> <a onclick="usar()"  href="Compra.html"><img id="carritoimagen" src="carritoblancok.png" title="Compra!" ></a> </li>
                      </ul>   
                 </nav>
             </header>
 		<main>
+                
 			<section>
 				<div class="articulo">                
                     <img src ="https://thumbs.static-thomann.de/thumb/thumb150x150/pics/prod/371904.jpg"/>
                     <span class="descripcion">
-                        <h1>Kawai GL 10 WH/P Grand Piano</h1>
+                        <h1 class="item Kawai" id="Kawai GL 10 WHP Grand Piano">Kawai GL 10 WHP Grand Piano</h1>
                         <ul>
                             <li>Mecánica ultrasensible</li>
                             <li>Martillos con fieltro en parte inferior</li>
@@ -96,14 +98,18 @@
                             <li>Longitud: 153cm</li>
                             <li>Acabado: Blanco pulido</li>
                             <li>Peso: 282Kg</li>
-                        </ul>                       
+                        </ul> 
+                                               
                     </span>
-                    <span class="precio"S><h1>10.222€</h1></span>        
+                    
+                    <span class="precio"> <h1><span class="precioNum">10.222</span>€</h1></span> 
+                    <button class = "botonCesta" type="button" onclick="botonComprar('Kawai GL 10 WHP Grand Piano')">Añadir a la cesta</button>
+                          
                 </div>
                 <div class="articulo">                
                     <img src ="https://thumbs.static-thomann.de/thumb/thumb150x150/pics/prod/366904.jpg"/>
                     <span class="descripcion">
-                        <h1>Steinway & Sons A-188 Makassar</h1>
+                        <h1 class="item Steinway and Sons" id="Steinway and Sons A188 Makassar" >Steinway and Sons A188 Makassar</h1>
                         <ul>
                             <li>Acabado: Madera de coromandel pulida</li>
                             <li>Reconstruido por nuestros especialistas de Steinway y nuestro maestro constructor de pianos</li>
@@ -113,12 +119,13 @@
                             <li>Peso: 315Kg</li>
                         </ul>                       
                     </span>
-                    <span class="precio"S><h1>41.888€</h1></span>        
+                    <span class="precio"><h1><span class="precioNum">41.888</span>€</h1></span>        
+                    <button class = "botonCesta" type="button" onclick="botonComprar('Steinway and Sons A188 Makassar')">Añadir a la cesta</button>
                 </div>
                 <div class="articulo">                
                     <img src ="https://thumbs.static-thomann.de/thumb/thumb150x150/pics/prod/306040.jpg"/>
                     <span class="descripcion">
-                        <h1>Yamaha C7X SH PE Silent Grand Piano</h1>
+                        <h1 class="item Yamaha" id="Yamaha C7X SH PE Silent Grand Piano" >Yamaha C7X SH PE Silent Grand Piano</h1>
                         <ul>
                             <li>Con sistema SH-Silent-System</li>
                             <li>Acabado: Negro pulido</li>
@@ -128,12 +135,14 @@
                             <li>Peso: 415Kg (913 libras)</li>
                         </ul>                       
                     </span>
-                    <span class="precio"S><h1>50.999€</h1></span>        
+                    <span class="precio"><h1><span class="precioNum">50.999</span>€</h1></span>       
+                    <button class = "botonCesta" type="button" onclick="botonComprar('Yamaha C7X SH PE Silent Grand Piano')">Añadir a la cesta</button>
+
                 </div>
                 <div class="articulo">                
                     <img src ="https://thumbs.static-thomann.de/thumb/thumb150x150/pics/prod/306040.jpg"/>
                     <span class="descripcion">
-                        <h1>Yamaha C7X SH PE Silent Grand Piano</h1>
+                        <h1 class="item Yamaha" id="Yamaha GB1 K Black Polished" >Yamaha GB1 K Black Polished</h1>
                         <ul>
                             <li>Con sistema silencioso</li>
                             <li>Lo mejor de todo, el GB1 ofrece la calidad y rendimiento de Yamaha a un precio sorprendentemente asequible</li>
@@ -143,6 +152,7 @@
                             <li>Peso: 261kg (574 libras)</li>
                         </ul>                       
                     </span>
-                    <span class="precio"S><h1>13.888€</h1></span>        
+                    <span class="precio"><h1><span class="precioNum">13.888</span>€</h1></span>      
+                    <button class = "botonCesta" type="button" onclick="botonComprar('Yamaha GB1 K Black Polished')">Añadir a la cesta</button>  
                 </div>
                 </section>
