@@ -21,10 +21,19 @@ console.log(sessionStorage.getItem("balu·")==null);
 //if (document.title.innerHTML=="Compras"){
     usar();
 //};
+    console.log(localStorage); 
+    
+    if(localStorage.getItem("selectOrden")!=null){
+         document.getElementById("Ordenar").value= localStorage.getItem("selectOrden");
+         
+         console.log(localStorage.getItem("selectOrden"));
+         console.log("entando en Ordenar con load");  
+         Ordenar(document.getElementById("Ordenar"));
+    };
+    
 
 
-
-  };
+};
 
 function botonComprar(idclick){
     console.log("funcion botonComprar");
@@ -326,6 +335,10 @@ function cambiarCantidadItem(selectItem){
 };
 
 function Ordenar(selectOrden){
+    if(selectOrden!=null){
+    localStorage.setItem("selectOrden",selectOrden.value);
+    
+    };
     console.log("___INICIO ORDENAR");
     var listaObjetosArticulo=[]
     var listaArticulos=document.getElementsByClassName("articulo");
@@ -368,6 +381,9 @@ function Ordenar(selectOrden){
         
     };
 
+    if(selectOrden.value=="default"){
+        return;
+    };
     if(selectOrden.value=="barato"){
         console.log(listaObjetosArticulo);
         listaObjetosArticulo.sort(function(a,b){return a.precio>b.precio; });
@@ -397,26 +413,9 @@ function Ordenar(selectOrden){
 
         }
 
-};
-function OrdenarPrecioBarato(a,b){
-   
-    console.log("___INICIO ORDENARBARATO");
-     return a.precio<b.precio;
+
 };
 
-function OrdenarPrecioCaro(){
-    var lista=document.getElementById("listaArticulos").childNodes;
-    for (producto in lista){
-        console.log(lista[producto])
-    }
-}
-
-function OrdenarMarca(){
-    var lista=document.getElementById("listaArticulos").childNodes;
-    for (producto in lista){
-        console.log(producto)
-    }
-}
 /*Tengo que recorrer el array en busca de valores repetidos*/
 
  
