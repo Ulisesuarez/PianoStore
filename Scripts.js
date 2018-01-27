@@ -176,6 +176,7 @@ for (var i=1;i<(registroCarro.length/2)+1;i++){
    var celdaNombre = rowArticulo.insertCell(1);
    var celdaPrecio = rowArticulo.insertCell(2);
    var celdaCantidad = rowArticulo.insertCell(3);
+   var celdaSuma = rowArticulo.insertCell(4);
    
    costeTotal=costeTotal+parseFloat(precioItem)*registroCarro[indiceCarro+1];
    celdaNombre.innerHTML = NombreItem;              
@@ -191,6 +192,7 @@ for (var i=1;i<(registroCarro.length/2)+1;i++){
    console.log("valordespuesselect",document.getElementById("selectCantidad").value)
    console.log(celdaCantidad.firstElementChild.value);
    celdaEliminar.appendChild(createButtonImage());
+   celdaSuma.innerHTML=String(celdaCantidad.firstElementChild.value*parseFloat(precioItem)+" €");
    indiceCarro=indiceCarro+2
     };};
     
@@ -226,6 +228,7 @@ for (var i=1;i<(registroCarro.length/2)+1;i++){
 function createSelct(){
     var sel =document.createElement("SELECT");
     sel.setAttribute("id","selectCantidad")
+    sel.setAttribute("onchange","cambiarCantidadItem(this)")
     for (var index = 1; index < 11; index++){
         var children= document.createElement("OPTION");
         children.setAttribute("value",String(index));
@@ -287,6 +290,39 @@ function eliminarItem(fila){
     console.log(sessionStorage);
     location.reload();
 
+};
+
+function cambiarCantidadItem(selectItem){
+    var contadorCantidad=0;
+    var valor=selectItem.value;
+    var itemCambiar=String(selectItem.parentNode.previousSibling.previousSibling.innerHTML)+'|'+String(selectItem.parentNode.previousSibling.innerHTML).slice(0,-2);
+    console.log(selectItem);
+    console.log(String(selectItem.parentNode.previousSibling.previousSibling.innerHTML)+'|'+String(selectItem.parentNode.previousSibling.innerHTML));
+    for (var articulo in sessionStorage){
+        
+        if(articulo!="length" && articulo!="clear" && articulo!="setItem" && articulo!="getItem" && articulo !="removeItem" && articulo!="key"){
+            
+            console.log(itemCambiar==sessionStorage.getItem(articulo));
+            if (itemCambiar==sessionStorage.getItem(articulo)){
+                contadorCantidad++;
+
+            };
+
+        };
+    };
+    for (var articulo in sessionStorage){
+        if (itemCambiar==sessionStorage.getItem(articulo)){
+            sessionStorage.removeItem(articulo);
+        
+        };
+        console.log(sessionStorage);
+    };
+    for (var i=0; i<valor;i++){
+        
+        sessionStorage.setItem(itemCambiar+String(i),itemCambiar);
+    }
+    console.log(sessionStorage);
+    location.reload();
 };
 /*Tengo que recorrer el array en busca de valores repetidos*/
 
