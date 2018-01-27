@@ -1,5 +1,5 @@
 window.onload = function() {
-localStorage.clear();
+//localStorage.clear();
 var celdaNombre;
 var celdaPrecio;
 var tablaCompra=document.getElementById("tabla")
@@ -18,16 +18,16 @@ console.log(sessionStorage.getItem("balu·")==null);
 
 
 
-usar();
-// Check browser support
+//if (document.title.innerHTML=="Compras"){
+    usar();
+//};
 
-
-   
 
 
   };
 
 function botonComprar(idclick){
+    console.log("funcion botonComprar");
     objetoProducto={tipo:"",precio:0};
     console.log(document.getElementById(idclick).parentNode.parentNode.childNodes);
     var divArticulo=document.getElementById(idclick).parentNode.parentNode.childNodes;
@@ -71,6 +71,7 @@ function botonComprar(idclick){
          
          document.getElementById("hiddenIndex").innerHTML=parseInt(document.getElementById("hiddenIndex").innerHTML)+1;
          sessionStorage.setItem(articulo+String(document.getElementById("hiddenIndex").innerHTML),ObjetoString)
+         console.log(sessionStorage);
          /*console.log(String(parseInt(localStorage.getItem("indiceArticulo"))+1));
          localStorage.setItem("indiceArticulo",String(parseInt(localStorage.getItem("indiceArticulo"))+1));
          
@@ -79,67 +80,133 @@ function botonComprar(idclick){
 
      };
      
-     location.reload();   
-   
+    location.reload();   
+    console.log("______FIN funcion botonComprar______");
 };
 
 
 
 function usar(){
+    console.log("______INICIO funcion usar______");
     var costeTotal=0;
     document.getElementById("hiddenIndex").innerHTML=sessionStorage.length;
     var articulo="articulo";
-    var tablaCompra=document.getElementById("tabla")
-    console.log(tablaCompra.childNodes);
-    
+    var tablaCompra=document.getElementById("tabla");
+    console.log(document.getElementById("title").innerText);
+    console.log(document.getElementById.innerText=='Compras');
+        if (tablaCompra!=null){
+        console.log(tablaCompra.childNodes);
+        };
     console.log(sessionStorage);
-    var indice=1;
-    for (var art in sessionStorage){
+    var indiceCarro=0;
+/*   for (var art in sessionStorage){
         if(art!="length" && art!="clear" && art!="setItem" && art!="getItem" && art!="removeItem" && art!="key"){
    //for (var indice = 0; indice < sessionStorage.length; indice++){
     //console.log(articulo+String(indice));
-    console.log()
-    console.log(art);
-    if (tablaCompra.childNodes[1].childNodes[indice]==null){
+    console.log(art)
+    console.log(art);*/
+    var registroCarro=[];
+for (var articuloActual in sessionStorage){
+        if(articuloActual!="length" && articuloActual!="clear" && articuloActual!="setItem" && articuloActual!="getItem" && articuloActual!="removeItem" && articuloActual!="key"){
+	
+            var cantidadArticulos =0;
+             
 
-        var rowArticulo = tablaCompra.insertRow(indice-1);
-    }else{
+	        for (var articulo in sessionStorage){
+                console.log(articulo);
+        		if(articulo!="length" && articulo!="clear" && articulo!="setItem" && articulo!="getItem" && articulo !="removeItem" && articulo!="key"){
+                    console.log(articuloActual==articulo)
+                    console.log(sessionStorage.getItem(articuloActual)==sessionStorage.getItem(articulo));
+	                if (sessionStorage.getItem(articuloActual)==sessionStorage.getItem(articulo)){
+                        console.log(cantidadArticulos);
+                        cantidadArticulos++;
+                        console.log(cantidadArticulos);
+                    };
+                };
+            };        
+            console.log(registroCarro.indexOf(articuloActual));
+             var obit={nombre:sessionStorage.getItem(articuloActual),cantidad:cantidadArticulos}
+            if (registroCarro.indexOf(sessionStorage.getItem(articuloActual))==-1){
+                console.log(obit.nombre);
+                registroCarro.push(obit.nombre);
+                registroCarro.push(obit.cantidad)
+                console.log("micarro");
+                console.log(registroCarro);
+            };
+        };
+};
 
-        var rowArticulo = tablaCompra.childNodes[1].childNodes[indice];
-    }
+for (var i=1;i<(registroCarro.length/2)+1;i++){
+    console.log(i);
+    console.log(registroCarro.length/2);
+
+   if (tablaCompra!=null && tablaCompra.childNodes[1].childNodes[i]==null ){
+       console.log("FLAG La fila no existe");
+       console.log(tablaCompra.childNodes[1].childNodes[i]);
+       console.log(i);
+       console.log(tablaCompra.childNodes[1].childNodes);
+       var rowArticulo = tablaCompra.insertRow(i-1);
+       console.log(tablaCompra.childNodes[1].childNodes);
+       console.log(tablaCompra.childNodes[1].childNodes[i-1]);
+       console.log
+   }else{
+
+    if(tablaCompra!=null){
+       var rowArticulo = tablaCompra.childNodes[1].childNodes[i];};
+   };
+   
+     
+    console.log(indiceCarro);
+    console.log(registroCarro[indiceCarro]);
+
     
 
-    if (sessionStorage.getItem(art)!=null){
-    var ObjetoString = sessionStorage.getItem(art);
-    console.log(ObjetoString);
+    if (typeof(registroCarro[indiceCarro])== 'string'){
+    var ObjetoString = registroCarro[indiceCarro]
+    console.log(registroCarro[indiceCarro]);
+    
     var NombreItem=RegExp(/.*\|/g).exec(ObjetoString)[0].slice(0,-1);
     var precioItem=ObjetoString.slice(NombreItem.length+1);
      
     console.log(NombreItem);
-     console.log(precioItem);
-     console.log(sessionStorage);
-    
-   var celdaNombre = rowArticulo.insertCell(0);
-   var celdaPrecio = rowArticulo.insertCell(1);
-   var celdaCantidad = rowArticulo.insertCell(2);
-   var celdaEliminar = rowArticulo.insertCell(3);
-   costeTotal=costeTotal+parseFloat(precioItem);
+    console.log(precioItem);
+    console.log(sessionStorage);
+    if(tablaCompra!=null){
+   var celdaEliminar = rowArticulo.insertCell(0);
+   var celdaNombre = rowArticulo.insertCell(1);
+   var celdaPrecio = rowArticulo.insertCell(2);
+   var celdaCantidad = rowArticulo.insertCell(3);
+   
+   costeTotal=costeTotal+parseFloat(precioItem)*registroCarro[indiceCarro+1];
    celdaNombre.innerHTML = NombreItem;              
    
    celdaPrecio.innerHTML =precioItem+" €";  
+
+   celdaCantidad.appendChild(createSelct());
+   console.log("Flag cantidad");
+   console.log("indiceCarro",indiceCarro);
+   console.log("registroCarro[indiceCarro+1]",registroCarro[indiceCarro+1]);
+   console.log("valoractualselect",document.getElementById("selectCantidad").value)
+   celdaCantidad.firstElementChild.value=registroCarro[indiceCarro+1];
+   console.log("valordespuesselect",document.getElementById("selectCantidad").value)
+   console.log(celdaCantidad.firstElementChild.value);
    celdaEliminar.appendChild(createButtonImage());
-   
-    };
-    indice++;
-    };
-};
+   indiceCarro=indiceCarro+2
+    };};
     
-    var rowTotal = tablaCompra.insertRow(sessionStorage.length);
+    };
+
+    if(tablaCompra!=null){
+    var rowTotal = tablaCompra.insertRow((registroCarro.length/2));
+    console.log(tablaCompra.childNodes[1].childNodes.length);
+    console.log(tablaCompra.childNodes[1].childNodes);
     var celdaTot=rowTotal.insertCell(0);
     var  celdaTotal = rowTotal.insertCell(1);
     celdaTot.innerHTML="TOTAL:"
     celdaTotal.innerHTML=costeTotal+" €";
 
+    };
+    console.log("______FIN funcion usar______");};
     /* var ObjetoString = sessionStorage.getItem(articulo+localStorage.getItem("indiceArticulo"));
     console.log(ObjetoString);
     var NombreItem=RegExp(/.*\|/g).exec(ObjetoString)[0].slice(0,-1);
@@ -154,8 +221,21 @@ function usar(){
    celdaNombre.innerHTML = NombreItem;              // Create a <li> node
    
    celdaPrecio.innerHTML =precioItem+" €";*/
-}
 
+
+function createSelct(){
+    var sel =document.createElement("SELECT");
+    sel.setAttribute("id","selectCantidad")
+    for (var index = 1; index < 11; index++){
+        var children= document.createElement("OPTION");
+        children.setAttribute("value",String(index));
+        children.innerHTML=index;
+        sel.appendChild(children);
+    };
+        
+    return sel;
+
+};
 function createButtonImage() {
     var x = document.createElement("BUTTON");
     //x.setAttribute("src", "imagenes/png/eliminar.png");
@@ -171,17 +251,17 @@ function createButtonImage() {
     //x.setAttribute("height", "228");
     
     return x;
-}
+};
 
 function eliminarItem(fila){
     location.reload(); 
-    console.log(fila.parentNode.previousSibling.previousSibling.innerHTML);
+    console.log(fila.parentNode.nextSibling.innerHTML);
     console.log(sessionStorage);
 
     for (var art in sessionStorage){
         if(art!="length" && art!="clear" && art!="setItem" && art!="getItem" && art!="removeItem" && art!="key"){
 
-            if(sessionStorage.getItem(art).includes(fila.parentNode.previousSibling.previousSibling.previousSibling.innerHTML)){
+            if(sessionStorage.getItem(art).includes(fila.parentNode.nextSibling.innerHTML)){
                 sessionStorage.removeItem(art);
             };
         };
@@ -207,7 +287,13 @@ function eliminarItem(fila){
     console.log(sessionStorage);
     location.reload();
 
-}
+};
+/*Tengo que recorrer el array en busca de valores repetidos*/
+
+ 
+
+
+
    // var car = {type:"Fiat", model:"500", color:"white"};(currentChild.firstElementChild.className .test(RegExp('item/.*')))
 
 /** 
@@ -245,4 +331,3 @@ function checkCookie() {
        }
     }
 }*/
-   
