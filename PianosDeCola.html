@@ -83,10 +83,19 @@
                      <li class="norm"> <a onclick="usar()"  href="Compra.html"><img id="carritoimagen" src="carritoblancok.png" title="Compra!" ></a> </li>
                      </ul>   
                 </nav>
+                <select onchange="Ordenar(this)" name="Ordenarpor" id="Ordenar">
+                    <option disabled="disabled" selected="selected">Ordenar por</option>
+                    
+                    <option class="normalOrdenar" value="barato">Precio más barato primero</option>
+                    <option class="normalOrdenar" value="caro">Precio más caro primero</option>
+                    <option class="normalOrdenar" value="marca">Marca</option>
+                </optgroup>
+                    
+                </select>
             </header>
 		<main>
                 
-			<section>
+			<section id="listaArticulos">
 				<div class="articulo">                
                     <img src ="https://thumbs.static-thomann.de/thumb/thumb150x150/pics/prod/371904.jpg"/>
                     <span class="descripcion">

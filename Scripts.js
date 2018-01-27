@@ -1,8 +1,8 @@
 window.onload = function() {
 //localStorage.clear();
+
 var celdaNombre;
 var celdaPrecio;
-var tablaCompra=document.getElementById("tabla")
 var objetoProducto={tipo:"",precio:0};
 console.log(localStorage.getItem("indiceArticulo"));
 if(localStorage.getItem("indiceArticulo")==null){
@@ -11,7 +11,7 @@ console.log("porqueeeeee");
 localStorage.setItem("indiceArticulo",document.getElementById("hiddenIndex").innerHTML);
 }
 console.log(localStorage.getItem("indiceArticulo"));
-console.log(tablaCompra);
+//console.log(tablaCompra);
 console.log(document.getElementById("result"));
 console.log("are yo alive");
 console.log(sessionStorage.getItem("balu·")==null);
@@ -48,7 +48,7 @@ function botonComprar(idclick){
                 
                 if (currentChild.firstElementChild.firstElementChild.className=='precioNum'){  
                     console.log("sEEE");
-                    objetoProducto.precio=1+parseFloat(currentChild.firstElementChild.firstElementChild.innerHTML.replace('.',''))
+                    objetoProducto.precio=1+parseFloat(currentChild.firstElementChild.firstElementChild.innerHTML.replace('.',''));
                 
                     console.log(objetoProducto);
                 };
@@ -324,6 +324,94 @@ function cambiarCantidadItem(selectItem){
     console.log(sessionStorage);
     location.reload();
 };
+
+function Ordenar(selectOrden){
+    console.log("___INICIO ORDENAR");
+    var listaObjetosArticulo=[]
+    var listaArticulos=document.getElementsByClassName("articulo");
+    var objetoProducto={tipo:"",precio:0,marca:"",div:null};
+    
+    for (var producto=0;producto<listaArticulos.length;producto++){
+        
+        console.log("Lista Articulos",listaArticulos,listaArticulos[producto]);
+        console.log(listaArticulos[producto].childNodes);
+        objetoProducto.div=listaArticulos[producto];
+        
+        for (var indice = 0; indice < listaArticulos[producto].childNodes.length; indice++){
+            
+                //console.log("indice",indice);
+                //console.log("listaArticulos[producto].childNodes[indice]",listaArticulos[producto].childNodes[indice]);
+            
+                var currentChild = listaArticulos[producto].childNodes[indice];
+                if (currentChild.firstElementChild){
+
+                    if (RegExp(/item.*/g).test(currentChild.firstElementChild.className)){   
+                        
+                        objetoProducto.tipo=currentChild.firstElementChild.id;
+                        objetoProducto.marca=currentChild.firstElementChild.className.slice("item ".length);
+                        
+                        console.log("Objeto producto tras marca",objetoProducto);
+                    };
+            
+                    if (currentChild.firstElementChild.firstElementChild){
+                        if (currentChild.firstElementChild.firstElementChild.className=='precioNum'){ 
+
+                            objetoProducto.precio=parseFloat(currentChild.firstElementChild.firstElementChild.innerHTML.replace('.',''));
+                            console.log("Objeto producto tras precio",objetoProducto);
+                            listaObjetosArticulo.push({tipo:objetoProducto.tipo,precio:objetoProducto.precio,marca:objetoProducto.marca,div:objetoProducto.div});
+                        };
+
+                    };
+                
+                };
+        };
+        
+    };
+
+    if(selectOrden.value=="barato"){
+        console.log(listaObjetosArticulo);
+        listaObjetosArticulo.sort(function(a,b){return a.precio>b.precio; });
+        console.log(listaObjetosArticulo);
+    };
+    if(selectOrden.value=="caro"){
+        console.log(listaObjetosArticulo);
+        listaObjetosArticulo.sort(function(a,b){return a.precio<b.precio; });
+        console.log(listaObjetosArticulo);
+    };
+    if(selectOrden.value=="marca"){
+        console.log(listaObjetosArticulo);
+        listaObjetosArticulo.sort(function(a,b){return a.marca<b.marca; });
+        console.log(listaObjetosArticulo);
+    };
+    var divsOrdenados=[]
+    
+    document.getElementById("listaArticulos").innerHTML="";
+    for (objetos in listaObjetosArticulo){
+        document.getElementById("listaArticulos").appendChild(listaObjetosArticulo[objetos].div);
+            console.log("indice de objetos",objetos);
+
+        }
+
+};
+function OrdenarPrecioBarato(a,b){
+   
+    console.log("___INICIO ORDENARBARATO");
+     return a.precio<b.precio;
+};
+
+function OrdenarPrecioCaro(){
+    var lista=document.getElementById("listaArticulos").childNodes;
+    for (producto in lista){
+        console.log(lista[producto])
+    }
+}
+
+function OrdenarMarca(){
+    var lista=document.getElementById("listaArticulos").childNodes;
+    for (producto in lista){
+        console.log(producto)
+    }
+}
 /*Tengo que recorrer el array en busca de valores repetidos*/
 
  
