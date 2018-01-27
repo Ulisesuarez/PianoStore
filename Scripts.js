@@ -380,6 +380,11 @@ function Ordenar(selectOrden){
     };
     if(selectOrden.value=="marca"){
         console.log(listaObjetosArticulo);
+        listaObjetosArticulo.sort(function(a,b){return a.marca>b.marca; });
+        console.log(listaObjetosArticulo);
+    };
+    if(selectOrden.value=="marca2"){
+        console.log(listaObjetosArticulo);
         listaObjetosArticulo.sort(function(a,b){return a.marca<b.marca; });
         console.log(listaObjetosArticulo);
     };
