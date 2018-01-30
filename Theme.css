@@ -500,7 +500,13 @@ margin-left:20%;
     border-width: 0.1em;
     
 }
+#finalizarCompra a{
+    color:black;
+    
+    text-decoration-line: none;
+    text-decoration-style: none;
 
+}
 footer{position: fixed;
 }
 
@@ -533,3 +539,28 @@ footer{position: fixed;
 	width: 84px;
     background: url("https://lh6.googleusercontent.com/-ImfwnK13pGw/Ui7ndohdbeI/AAAAAAAAB94/mkMwWrLrrP0/s924/mini-social-icons.png") 84px -84px;
 }
+
+
+.molesto{
+   margin-left: 5%;
+   width: 90%;
+   height: 30%;
+   animation: pulse .2s infinite;
+  }
+  
+.molesto p{
+    font-size:3em;
+}
+  
+  @keyframes pulse {
+    0%, 100%  {
+      background-color: lime;
+    }
+    33% {
+      background-color: blue;
+    }
+    66% {
+      background-color: #ff0080;
+    }
+  
+  }
