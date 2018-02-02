@@ -99,6 +99,11 @@ function usar(){
     console.log("______INICIO funcion usar______");
     var costeTotal=0;
     document.getElementById("hiddenIndex").innerHTML=sessionStorage.length;
+    if(document.getElementById("hiddenIndex").innerHTML==0){
+        document.getElementById("CompraH2").innerHTML="Cesta vacía";  
+    }else{
+        document.getElementById("CompraH2").innerHTML="Tienes "+ sessionStorage.length.toString()+" artículos en la cesta ";
+    }
     var articulo="articulo";
     var tablaCompra=document.getElementById("tabla");
     console.log(document.getElementById("title").innerText);
@@ -201,6 +206,7 @@ for (var i=1;i<(registroCarro.length/2)+1;i++){
    console.log("valordespuesselect",document.getElementById("selectCantidad").value)
    console.log(celdaCantidad.firstElementChild.value);
    celdaEliminar.appendChild(createButtonImage());
+   celdaEliminar.style.width="10px";
    celdaSuma.innerHTML=String(celdaCantidad.firstElementChild.value*parseFloat(precioItem)+" €");
    indiceCarro=indiceCarro+2
     };};
@@ -211,11 +217,16 @@ for (var i=1;i<(registroCarro.length/2)+1;i++){
     var rowTotal = tablaCompra.insertRow((registroCarro.length/2));
     console.log(tablaCompra.childNodes[1].childNodes.length);
     console.log(tablaCompra.childNodes[1].childNodes);
-    var celdaTot=rowTotal.insertCell(0);
-    var  celdaTotal = rowTotal.insertCell(1);
+    var celdapadding=rowTotal.insertCell(0);
+    var celdapadding2=rowTotal.insertCell(1);
+    var celdapadding3=rowTotal.insertCell(2);
+    var celdaTot=rowTotal.insertCell(3);
+    var  celdaTotal = rowTotal.insertCell(4);
     celdaTot.innerHTML="TOTAL:"
     celdaTotal.innerHTML=costeTotal+" €";
-
+    celdapadding.setAttribute("class","totalPadding")
+    celdapadding2.setAttribute("class","totalPadding")
+    celdapadding3.setAttribute("class","totalPadding")
     };
     console.log("______FIN funcion usar______");};
     /* var ObjetoString = sessionStorage.getItem(articulo+localStorage.getItem("indiceArticulo"));
@@ -416,6 +427,15 @@ function Ordenar(selectOrden){
 
 };
 
+function play(img)
+{console.log(img);
+    var audio=img.nextElementSibling;
+    console.log(audio);
+    //var audio = document.getElementById("audio1");
+    img.style.backgroundColor="rgba(63,191,93,0.6)";
+    audio.play();
+    
+}
 /*Tengo que recorrer el array en busca de valores repetidos*/
 
  

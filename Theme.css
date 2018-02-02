@@ -479,10 +479,7 @@ margin-top:13%;
 margin-left:20%;
 }
 
-#tablehead th{
-    margin-left: 5em;
-    padding-left: 5em;
-}
+
 #hiddenIndex{
     display:inline;
 }
@@ -564,3 +561,255 @@ footer{position: fixed;
     }
   
   }
+
+
+  #pianoRoto{
+      width: 90%;
+      margin-top:10%;
+      margin-left:3%;
+      height: 500px;
+     
+      
+
+
+  }
+
+  #superficieBlanca2{
+   
+    z-index: 1;
+    float: left;
+    position:relative;
+    left:-5.5em;
+    
+    
+  }
+#superficieNegra1{
+    z-index: 2;
+    float:left;
+    position:relative;
+    left:-3.3em;
+   
+  }
+
+  #superficieBlanca1{
+      float: left;
+      margin-left: 2em;
+
+  }
+
+  #superficieBlanca3{
+   
+    z-index: 1;
+    float: left;
+    position:relative;
+    left:-11em;
+    top:0.3em;
+    
+    
+  }
+#superficieNegra2{
+    z-index: 2;
+    float:left;
+    position:relative;
+    left:-7.5em;
+   
+  }
+
+  #superficieBlanca4{
+   
+    z-index: 1;
+    float: left;
+    position:relative;
+    left:-10.6em;
+    top:0.3em;
+    
+    
+  }
+#superficieNegra3{
+    z-index: 2;
+    float:left;
+    position:relative;
+    left:-14em;
+   
+  }
+
+  #superficieBlanca5{
+   
+    z-index: 1;
+    float: left;
+    position:relative;
+    left:-16em;
+    top:0.3em;
+    
+    
+  }
+#superficieNegra4{
+    z-index: 2;
+    float:left;
+    position:relative;
+    left:-18em;
+   
+  }
+
+  #superficieBlanca6{
+   
+    z-index: 1;
+    float: left;
+    position:relative;
+    left:-21em;
+    top:0.3em;
+    
+    
+  }
+#superficieNegra5{
+    z-index: 2;
+    float:left;
+    position:relative;
+    left:46.9em;
+    top:-39em
+  }
+
+  #superficieBlanca7{
+   
+    z-index: 1;
+    float: left;
+    position:relative;
+    left:43.2em;
+    top:-38.7em;
+    
+    
+  }
+
+#piezateclado{
+
+    float: left;
+    position:relative;
+    left:41.5em;
+    top:-38.7em;
+
+}
+
+#tabla {
+    
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#tabla td, #tabla th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#tabla tr:nth-child(odd){background-color: rgba(133, 219, 219,0.3);}
+#tabla tr:nth-child(even){background-color: rgba(133, 219, 133,0.3);}
+
+#tabla tr:hover {background-color: rgb(220, 177, 236);}
+
+
+
+
+
+#tablehead{
+
+width: 80%;
+}
+
+#tablehead th{
+    color:rgb(8, 8, 8);
+}
+
+#thProducto{
+    position: absolute;
+    left:15%;
+    top:20.5em;
+}
+#thPrecio{
+    position: absolute;
+    left:56%;
+    top:20.5em;
+}
+
+
+
+#thCantidad{
+    position: absolute;
+    left:67%;
+    top:20.5em;
+    
+}
+
+#thSuma{
+    position: absolute;
+    left:78%;
+    top:20.5em;
+}
+
+.totalPadding{
+
+visibility: collapse;
+}
+
+#CompraH2{
+    width: 100%;
+    text-align: center;
+}
+
+#finalizarCompra{
+    margin-left:80%;
+    margin-top: 4%;
+}
+
+#h1Noticias{
+    text-align: center;
+}
+
+
+/*FOOTER SPRITE*/
+
+#social-media {
+    margin-top: 10%;
+    float:right;
+    
+}
+#social-media a {
+    border-radius:2px; 
+    border:10px; 
+    display:block;
+    
+    width:30px; 
+    height:30px;}
+ 
+a.facebook{
+    display:block; 
+    background-position:  0px 0px; 
+ background: url(imagenes/social-icons.jpg) no-repeat;
+    }
+
+a.facebook:hover{background-position: 0px -30px;}
+ 
+a.twitter{
+    background: url(imagenes/social-icons.jpg) no-repeat;
+    display:block; 
+    background-position-x: -30px;
+    background-position-y: 0px; 
+    width:30px; 
+    height:30px;
+    
+}
+a.twitter:hover{background-position:-30px -30px;}
+ 
+ 
+a.instagram{
+    display:block; 
+    background: url(imagenes/social-icons.jpg) no-repeat -90px 0px;
+    width:30px; 
+    height:30px;}
+a.instagram:hover{background-position:-90px -30px;}
+ 
+
+a.googleplus{
+    display:block; 
+    background: url(imagenes/social-icons.jpg) no-repeat -180px 0px; 
+    width:30px; 
+    height:30px;}
+a.googleplus:hover{background-position: -180px -30px;}
