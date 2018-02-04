@@ -99,14 +99,17 @@ function usar(){
     console.log("______INICIO funcion usar______");
     var costeTotal=0;
     document.getElementById("hiddenIndex").innerHTML=sessionStorage.length;
+    
+    if(document.title.innerHTML=="Compras"){
     if(document.getElementById("hiddenIndex").innerHTML==0){
         document.getElementById("CompraH2").innerHTML="Cesta vacía";  
     }else{
         document.getElementById("CompraH2").innerHTML="Tienes "+ sessionStorage.length.toString()+" artículos en la cesta ";
     }
+    }
+
     var articulo="articulo";
     var tablaCompra=document.getElementById("tabla");
-    console.log(document.getElementById("title").innerText);
     console.log(document.getElementById.innerText=='Compras');
         if (tablaCompra!=null){
         console.log(tablaCompra.childNodes);
